@@ -1,0 +1,29 @@
+{
+  "name": "use-download-csv",
+  "version": "0.0.0",
+  "description": "Javascript function to convert json to csv and download to client. Can be used like a React hook.",
+  "main": "src/use-download-csv.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasmarr/use-download-csv.git"
+  },
+  "keywords": [
+    "JSON",
+    "CSV",
+    "download",
+    "React"
+  ],
+  "author": "Thomas Marr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thomasmarr/use-download-csv/issues"
+  },
+  "homepage": "https://github.com/thomasmarr/use-download-csv#readme",
+  "dependencies": {
+    "file-saver": "^2.0.2",
+    "json2csv": "^5.0.1"
+  }
+}
