@@ -4,18 +4,18 @@ Create a .csv file from a javascript object and download to client.
 
 This package is a very simple function which uses [json2csv](https://mircozeiss.com/json2csv/) for parsing, the [Blob API](https://developer.mozilla.org/en-US/docs/Web/API/Blob/Blob) to create a blob, and [file-saver](github.com/eligrey/FileSaver.js#readme) to download the resulting file to the client.
 
-## useDownloadCsv
+## useCsvDownloader
 
-The `useDownloadCsv()` function signature looks like this:
+The `useCsvDownloader()` function signature looks like this:
 
 ```
-useDownloadCsv(optional Object parseOpts)
+useCsvDownloader(optional Object parseOpts)
 ```
 
-useDownloadCsv uses the `parse` method from [json2csv](https://mircozeiss.com/json2csv/). The optional `parseOpts` parameter is passed as the `options` for the [json2csv](https://mircozeiss.com/json2csv/) `parse()` method. You can [read the docs for the available options here](https://mircozeiss.com/json2csv/#available-options).
+useCsvDownloader uses the `parse` method from [json2csv](https://mircozeiss.com/json2csv/). The optional `parseOpts` parameter is passed as the `options` for the [json2csv](https://mircozeiss.com/json2csv/) `parse()` method. You can [read the docs for the available options here](https://mircozeiss.com/json2csv/#available-options).
 
 
-useDownloadCsv **returns a function** with the following signature:
+useCsvDownloader **returns a function** with the following signature:
 
 ```
 downloadCsv(required Object | Array data, optional String filename)
@@ -30,9 +30,9 @@ This function will immediately (when invoked) parse the data and download to the
 ### Basic:
 
 ```
-import useDownloadCsv from 'use-download-csv'
+import useCsvDownloader from 'use-download-csv'
 
-const downloadCsv = useDownloadCsv()
+const downloadCsv = useCsvDownloader()
 
 const data = [
     {
@@ -61,7 +61,7 @@ document
 ### React:
 ```
 import React from 'react'
-import useDownloadCsv from 'use-download-csv'
+import useCsvDownloader from 'use-download-csv'
 
 const data = [
     {
@@ -84,7 +84,7 @@ const data = [
 
 const App = () => {
 
-    const downloadCsv = useDownloadCsv()
+    const downloadCsv = useCsvDownloader()
 
     return (
         <button onClick={()=>downloadCsv(data,'some_file.csv')}>
@@ -98,11 +98,11 @@ const App = () => {
 
 ```
 import React from 'react'
-import useDownloadCsv from 'use-download-csv'
+import useCsvDownloader from 'use-download-csv'
 
 const App = () => {
 
-    const downloadCsv = useDownloadCsv()
+    const downloadCsv = useCsvDownloader()
 
     const handleDownloadClick = async () => {
         const res = await fetch(`api/get-data`)
@@ -124,7 +124,7 @@ const App = () => {
 
 ```
 import React from 'react'
-import useDownloadCsv from 'use-download-csv'
+import useCsvDownloader from 'use-download-csv'
 
 const App = () => {
 
@@ -134,7 +134,7 @@ const App = () => {
         header: false
     }
 
-    const downloadCsv = useDownloadCsv(parseOpts)
+    const downloadCsv = useCsvDownloader(parseOpts)
 
     const handleDownloadClick = async () => {
         const res = await fetch(`api/get-data`)
